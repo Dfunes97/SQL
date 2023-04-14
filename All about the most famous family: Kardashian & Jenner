@@ -1,0 +1,73 @@
+/* Create table Famous_People (id INTEGER PRIMARY KEY AUTOINCREMENT,
+full name TEXT, 
+company TEXT, 
+company launch year INTEGER, 
+networth INTEGER,
+number of kids INTEGER,
+spouse/partner
+Instagram followers);
+
+INSERT INTO Famous_People (Person id, full name, company launch year,networth,number of kids, spouse/partner, Instagram followers)
+VALUES (1, "Kim Kardashian", "Skims", "2019","1200000000","4", "NULL", "35000000");
+
+INSERT INTO Famous_People (Person id, full name, company launch year,networth,number of kids, spouse/partner, Instagram followers)
+VALUES (2, "Kourtney Kardashian", "Poosh", "2019", "65000000","3","Travis Barker","218000000");
+
+INSERT INTO Famous_People (Person id, full name, company launch year,networth,number of kids, spouse/partner, Instagram followers)
+VALUES (3, "Khloe Kardashian", "Good 
+American", "2016", "60000000", "2", "Tristan Thompson", "303000000");
+
+INSERT INTO Famous_People (Person id, full name, company launch year,networth,number of kids, spouse/partner, Instagram followers)
+VALUES (4, "Kylie Jenner", "Kylie Cosmetics", "2014", "1000000000", "2", "Null", "387000000");
+
+INSERT INTO Famous_People (Person id, full name, company launch year,networth,number of kids, spouse/partner, Instagram followers)
+VALUES (5, "Kendall Jenner", "818 Tequila", "2022", "60000000", "0", "Bad Bunny", "284000000"); 
+
+INSERT INTO Famous_People (Person id, full name, company launch year,networth,number of kids, spouse/partner, Instagram followers)
+VALUES (6, "Rob Kardashian", "Arthur George Socks", "2012", "10000000", "1","NULL","3100000");
+
+INSERT INTO Famous_People (Person id, full name, company launch year,networth,number of kids, spouse/partner, Instagram followers)
+VALUES (7, "Kris Jenner", "Safely", "2022", "170000000", "6", "Corey Gamble","51800000");
+
+INSERT INTO Famous_People (Person id, full name, company launch year,networth,number of kids, spouse/partner, Instagram followers)
+VALUES (8, "Caitlyn Jenner", "NULL", "NULL", "25000000", "6", "Sohpia Hutchins", "14400000");
+
+
+CREATE TABLE hobbies (id INTEGER PRIMARY KEY AUTOINCREMENT,person_id INTEGER, name TEXT); 
+
+INSERT INTO hobbies (person_id, name) VALUES (1, "tanning");
+INSERT INTO hobbies (person_id, name) VALUES (1, "makeup");
+INSERT INTO hobbies (person_id, name) VALUES (2, "cooking");
+INSERT INTO hobbies (person_id, name) VALUES (2, "travel");
+INSERT INTO hobbies (person_id, name) VALUES (3, "organizing");
+INSERT INTO hobbies (person_id, name) VALUES (3, "painting");
+INSERT INTO hobbies (person_id, name) VALUES (1, "drawing");
+INSERT INTO hobbies (person_id, name) VALUES (4, "taking pictures");
+INSERT INTO hobbies (person_id, name) VALUES (4, "singing");
+INSERT INTO hobbies (person_id, name) VALUES (5, "horseback riding");
+INSERT INTO hobbies (person_id, name) VALUES (5, "modeling");
+INSERT INTO hobbies (person_id, name) VALUES (6, "eating");
+INSERT INTO hobbies (person_id, name) VALUES (7, "workout");
+INSERT INTO hobbies (person_id, name) VALUES (7, "travel");
+INSERT INTO hobbies (person_id, name) VALUES (8, "politics");
+
+
+What is the total sum of all of the Kardashian and Jenner networth?
+    SELECT type SUM(networth) FROM Famous_People GROUP BY type;
+
+Who most recently launched a company within the past 5 years?
+    SELECT * FROM Famous_People
+    WHERE company_launch_year >=2018
+    ORDER BY launch_year asc; 
+    
+Which person created the company brand Called "Poosh"?
+    SELECT name FROM Famous_Person WHERE company='Poosh' 
+    
+ 
+ What are each famous persons favorite hobbies?
+ 
+    SELECT f.fullname, h.names
+   
+ FROM famous_people f 
+ JOIN hobbies h 
+ ON f.id=h.person_id;
