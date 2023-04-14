@@ -1,0 +1,42 @@
+/**Cosmetic List:
+Lipstick (6) 
+Blush(5)
+Mascara (3)
+Eyelash Curler (10)
+Eyeliner(11)
+Eyeshadow (19)
+Foundation (21)
+Concealer (17)
+Brow Pencil (6)
+Moisturizer (32)
+Eye Cream (14)
+Lip Gloss (22)
+Highlighter (12)
+Setting Spray (19) 
+Perfume (19)
+
+CREATE TABLE cosmetic (id INTEGER PRIMARY KEY, Name, quantity, INTEGER, price INTEGER); 
+
+INSERT INTO cosmetic VALUES (1, "Lipstick", 6, 5); 
+INSERT INTO cosmetic VALUES (2, "Blush", 5, 10);
+INSERT INTO cosmetic VALUES (3, "Mascara", 3,7);
+INSERT INTO cosmetic VALUES (4, "Eyelash Curler",10,4);
+INSERT INTO cosmetic VALUES (5, "Eyeliner", 11, 9);
+INSERT INTO cosmetic VALUES (6, "Eyeshadow", 19, 8); 
+INSERT INTO cosmetic VALUES (7, "Foundation", 21, 7);
+INSERT INTO cosmetic VALUES (8, "Concealer", 17,22);
+INSERT INTO cosmetic VALUES (9, "Brown Pencil",6,3);
+INSERT INTO cosmetic VALUES (10, "Moisturizer",32, 21);
+INSERT INTO cosmetic VALUES (11, "Eye cream", 14, 17);
+INSERT INTO cosmetic VALUES (12, "Lip Gloss", 22, 9);
+INSERT INTO cosmetic VALUES (13, "Highlighter",12,18);
+INSERT INTO cosmetic VALUES (14, "Setting Spray",19, 11);
+INSERT INTO cosmetic VALUES (15, "Perfume", 21, 30);
+
+--display the database ordered by price.
+SELECT * FROM cosmetic;
+ORDER BY price asc; 
+
+--display the database of the cost of all cosmetic. 
+SELECT price, SUM (quantity) FROM cosmetic 
+GROUP BY price;
